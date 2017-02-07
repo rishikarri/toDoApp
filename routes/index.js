@@ -28,10 +28,10 @@ router.post('/addNewWord', (req, res, next)=>{
 
 	var insertQuery = "INSERT INTO userWords (user_words) VALUES ('"+userWord+"')"; 
 
-	//actually place the insertquery into the page
+	//actually place the insertquery into the the database and say hey there to the user 
 	connection.query(insertQuery, (error, results, field)=>{
 		if (error) throw error;
-		res.send('hey there')
+		res.send('hey there, your word has been added to the database')
 	})
 
 
